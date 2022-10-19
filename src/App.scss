@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import './scss/mixins'; //import for using the border-radius in _mixins.scss
+@import './scss/variables'; //import for using $spacing in _variables.scss
 
 .App {
   text-align: center;
 }
-
- .noTransition{
-  -webkit-transition: none !important;
-  -moz-transition: none !important;
-  -o-transition: none !important;
-  transition: none !important;
- }
+.noTransition{
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
 
 img{
   width: 100%;
 }
 
 .footer{
-
+    text-align: center;
 }
 
 .home{
@@ -35,49 +36,27 @@ img{
                 font-weight: bold;
             }
     
-            button{
-                background: #6d767c;
-                color: white;
-                padding: 10px;
-                border-radius: 5px;
-                border: 0;
-                outline: 0;
-                transition: all 0.2s ease;
-                cursor: pointer;
-                font-weight: bold;
-
-                &:hover{
-                    background: #5a6268;
-                }
-            }
-    
         }
     }
 
     &-specialization{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        @include flex-center();
 
         .bottom-line{
             width: 20%;
-            background: rgb(4, 183, 196);
+            background: $CyanC;
             height: 2px;
         }
 
         &-grid{
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: $column2;
             grid-gap: 16px;
             padding: 37px;
             margin: 20px 0;
 
             div{
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                text-align: center;
+                @include flex-center();
             }
         }
 
@@ -89,14 +68,11 @@ img{
     min-height: 80px;
 
     &-heading{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-center();
         margin: 30px 0;
 
         .bottom-line{
-            background: rgb(4, 183, 196);
+            background: $CyanC;
             height: 2px;
             width: 20%;
         }
@@ -104,16 +80,13 @@ img{
 
     &-grid{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: $column3;
         justify-items: center;
         margin: 50px 0;
 
         div{
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            background: aliceblue;
+            @include flex-center();
+            background: $WhiteC;
             width: 85%;
             border: 1px solid;
         }
@@ -145,14 +118,14 @@ img{
                 text-align: center;
             }
             &-grid{
-                grid-template-columns: repeat(1, 1fr);
+                grid-template-columns: $column1;
             }
         }
     }
 
     .contact{
         &-grid{
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: $column1;
         }
     }
     
